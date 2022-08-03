@@ -8,7 +8,7 @@ console.log(sumTo(2));
 console.log(sumTo(3));
 
 // 2
-let findShort = str => str.split(" ").sort((a, b) => a.length - b.length)[0];
+const findShort = str => str.split(" ").sort((a, b) => a.length - b.length)[0];
 
 console.log(findShort("Lorem ipsum dolor sit amet"));
 console.log(findShort("Hello world"));
