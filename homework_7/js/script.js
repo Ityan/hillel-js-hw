@@ -11,6 +11,6 @@ console.log(sumTo(3));
 const findShort = str => str.split(" ").sort((a, b) => a.length - b.length)[0];
 
 console.log(findShort("Lorem ipsum dolor sit amet"));
-console.log(findShort("Hello world"));
+console.log(findShort("Hello world!"));
 console.log(findShort("Hi"));
 console.log(findShort("She is David's sister"));
