@@ -19,11 +19,12 @@ console.log(sumTwoSmallestNumbers(1)); // undefined и отдельный consol
 // 2
 
 function createCalculator(number) {
+  let result = number;
   return {
-    sum: (n) => number += n,
-    mult: (n) => number *= n,
-    sub: (n) => number -= n,
-    div: (n) => number /= n
+    sum: (n) => result += n,
+    mult: (n) => result *= n,
+    sub: (n) => result -= n,
+    div: (n) => result /= n
   };
 }
 
