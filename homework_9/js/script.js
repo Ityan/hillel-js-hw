@@ -33,8 +33,8 @@ console.log(getDiffDays('2021-01-02', '2020-03-15')); // Error: your start date 
 
 // 3
 function isWeekend(dateStr) {
-  const dateOfWeek = new Date(dateStr).getDay();
-  return dateOfWeek === 6 || dateOfWeek === 0;
+  const dayOfWeek = new Date(dateStr).getDay();
+  return dayOfWeek === 6 || dayOfWeek === 0;
 }
 
 console.log(isWeekend('2022-02-12')); // true
