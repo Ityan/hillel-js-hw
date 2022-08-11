@@ -8,6 +8,8 @@ console.log(`${birthdate.getDate()}.${birthdate.getMonth() + 1}.${birthdate.getF
 // 2
 
 function getDiffDays(startDate, endDate) {
+  const DAY_IN_MILLIS = 24 * 60 * 60 * 1000;
+
   const start = Date.parse(startDate);
   const end = Date.parse(endDate);
   if (isNaN(start) || isNaN(end)) {
@@ -21,7 +23,7 @@ function getDiffDays(startDate, endDate) {
     return;
   }
 
-  return diff / (24 * 60 * 60 * 1000);
+  return diff / DAY_IN_MILLIS;
 }
 
 console.log(getDiffDays('2020-01-01', '2020-01-17')); // 16
@@ -31,8 +33,8 @@ console.log(getDiffDays('2021-01-02', '2020-03-15')); // Error: your start date 
 
 // 3
 function isWeekend(dateStr) {
-  const date = new Date(dateStr);
-  return date.getDay() === 6 || date.getDay() === 0;
+  const dateOfWeek = new Date(dateStr).getDay();
+  return dateOfWeek === 6 || dateOfWeek === 0;
 }
 
 console.log(isWeekend('2022-02-12')); // true
