@@ -1,7 +1,9 @@
 "use strict";
 
-function isWeekend(dateStr) {
-  const dayOfWeek = new Date(dateStr).getDay();
+function isWeekendInCurrentYear(dateStr) {
+  const date = new Date(dateStr);
+  date.setFullYear(new Date().getFullYear());
+  const dayOfWeek = date.getDay();
   return dayOfWeek === 6 || dayOfWeek === 0;
 }
 
@@ -33,7 +35,7 @@ class Employee extends Person {
   }
 
   celebrate() {
-    if (isWeekend(this.birthDayDate)) {
+    if (isWeekendInCurrentYear(this.birthDayDate)) {
       return super.celebrate();
     }
     return "Happy Birthday, but I need to work";
