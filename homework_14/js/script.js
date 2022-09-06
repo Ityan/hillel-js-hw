@@ -29,11 +29,8 @@ console.log(isValidDateFormat("2012/09/18 12:10")); // true
 console.log(isValidDateFormat("12.02.2022 12:10")); // false
 
 // 3
-function isAfter(first, second) {
-  const firstDate = first instanceof Date ? Date.parse(first) : first;
-  const secondDate = second instanceof Date ? Date.parse(second) : second;
-
-  return firstDate > secondDate;
+function isAfter(date, dateToCompare) {
+  return date > dateToCompare;
 }
 
 console.log(isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))); // true
