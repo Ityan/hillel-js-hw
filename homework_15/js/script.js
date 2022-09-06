@@ -1,10 +1,10 @@
 "use strict";
 
 const STYLE = "album_title";
-const albumsNode = document.getElementById('albums');
+const albumsNode = document.getElementById("albums");
 
 function addListItem(listNode, styleClass, title) {
-  const itemNode = document.createElement('li');
+  const itemNode = document.createElement("li");
   itemNode.innerHTML = title;
   itemNode.classList.add(styleClass);
   listNode.append(itemNode);
