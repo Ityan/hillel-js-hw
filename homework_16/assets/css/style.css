@@ -1,0 +1,39 @@
+body {
+  font-size: 18px;
+  background-color: #efefef;
+  color: #324047
+}
+
+.album-container {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.album {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.album-title {
+  position: relative;
+  list-style-type: none;
+}
+
+.delete-btn {
+  background-color: #c45f54;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 10px;
+  margin: 4px 15px;
+}
+
+.delete-btn:hover {
+  background-color: #ec210b;
+}
