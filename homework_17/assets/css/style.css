@@ -18,3 +18,7 @@
 .err-msg {
   color: red;
 }
+
+.hidden {
+  visibility: hidden;
+}

@@ -1,9 +1,9 @@
 "use strict";
 
 const REMOVE_BTN_STYLE = "delete-btn";
-const ERR_MSG_STYLE = "err-msg";
-const ERR_ID = "error";
+const HIDDEN_STYLE = "hidden";
 
+const errNode = document.getElementById("error");
 const listNode = document.getElementById("list");
 const form = document.forms.addItem;
 const { title } = form.elements;
@@ -30,19 +30,11 @@ function isEmptyField(field) {
   return field.value.trim().length === 0;
 }
 
-function displayEmptyFieldErr(previousNode) {
-  const spanNode = document.createElement("span");
-  spanNode.classList.add(ERR_MSG_STYLE);
-  spanNode.innerHTML = "Input is empty";
-  spanNode.setAttribute("id", ERR_ID);
-  previousNode.parentNode.insertBefore(spanNode, previousNode.nextSibling);
-}
-
 form.onsubmit = (event) => {
   event.preventDefault();
 
   if (isEmptyField(title)) {
-    displayEmptyFieldErr(title);
+    errNode.classList.remove(HIDDEN_STYLE);
   } else {
     addListItem(listNode, title.value);
   }
@@ -51,9 +43,7 @@ form.onsubmit = (event) => {
 };
 
 title.oninput = () => {
-  const errNode = document.getElementById(ERR_ID);
-
-  if (errNode) {
-    form.removeChild(errNode);
+  if (!errNode.classList.contains(HIDDEN_STYLE)) {
+    errNode.classList.add(HIDDEN_STYLE);
   }
 };
