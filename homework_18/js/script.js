@@ -9,13 +9,13 @@ const form = document.forms.addItem;
 const { title } = form.elements;
 
 listNode.addEventListener("click", (event) => {
-  const isRemoveButton = event.target.classList.contains(REMOVE_BTN_STYLE);
-  if (isRemoveButton) {
+  if (event.target.classList.contains(REMOVE_BTN_STYLE)) {
     event.target.closest("li").remove();
   }
+});
 
-  const isChecked = event.target.classList.contains("check-btn");
-  if (isChecked) {
+listNode.addEventListener("change", (event) => {
+  if (event.target.classList.contains("check-btn")) {
     const li = event.target.closest("li");
     li.classList.toggle("text-done");
     li.classList.toggle("list-group-item-success");
