@@ -1,18 +1,9 @@
 .delete-btn {
-  background-color: #c45f54;
-  border: none;
-  color: white;
-  padding: 5px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 4px;
-  font-size: 10px;
-  margin: 4px 15px;
+  float: right;
 }
 
-.delete-btn:hover {
-  background-color: #ec210b;
+.delete-btn .bi-trash {
+  pointer-events: none;
 }
 
 .err-msg {
@@ -21,4 +12,14 @@
 
 .hidden {
   visibility: hidden;
+}
+
+.custom-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-done {
+  text-decoration: line-through;
 }

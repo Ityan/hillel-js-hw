@@ -9,19 +9,37 @@ const form = document.forms.addItem;
 const { title } = form.elements;
 
 listNode.addEventListener("click", (event) => {
-  if (event.target.className === REMOVE_BTN_STYLE) {
-    event.target.parentNode.remove();
+  const isRemoveButton = event.target.classList.contains(REMOVE_BTN_STYLE);
+  if (isRemoveButton) {
+    event.target.closest("li").remove();
+  }
+
+  const isChecked = event.target.classList.contains("check-btn");
+  if (isChecked) {
+    const li = event.target.closest("li");
+    li.classList.toggle("text-done");
+    li.classList.toggle("list-group-item-success");
+    li.classList.toggle("list-group-item-primary");
+
+    const [btn] = li.getElementsByClassName(REMOVE_BTN_STYLE);
+    btn.disabled = !btn.disabled;
   }
 });
 
 function addListItem(listNode, text) {
   const itemNode = document.createElement("li");
   itemNode.innerHTML = text;
+  itemNode.className = "w-50 list-group-item list-group-item-primary";
 
   const btnNode = document.createElement("button");
-  btnNode.classList.add(REMOVE_BTN_STYLE);
-  btnNode.innerHTML = "X";
-  itemNode.prepend(btnNode);
+  btnNode.className = "btn btn-danger float-right delete-btn";
+  btnNode.innerHTML = "<i class='bi bi-trash'></i>";
+  itemNode.append(btnNode);
+
+  const checkNode = document.createElement("input");
+  checkNode.type = "checkbox";
+  checkNode.className = "mx-4 check-btn";
+  itemNode.prepend(checkNode);
 
   listNode.append(itemNode);
 }
