@@ -1,6 +1,25 @@
-body {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  background-color: aqua;
+.delete-btn {
+  float: right;
+}
+
+.delete-btn .bi-trash {
+  pointer-events: none;
+}
+
+.err-msg {
+  color: red;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.custom-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-done {
+  text-decoration: line-through;
 }

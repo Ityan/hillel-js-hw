@@ -15,7 +15,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "My App"
+      title: "TODO list",
+      template: path.resolve(__dirname, "./src/template.html")
     }),
     new CleanWebpackPlugin()
   ],
