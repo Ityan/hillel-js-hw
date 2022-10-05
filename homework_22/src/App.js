@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <Button isOpened={isOpened} onClick={handleClick} />
+      <Button name={isOpened ? "Hide title" : "Open title"} onClick={handleClick} />
       {isOpened && <Title name="Products" type="bold" />}
     </div>
   );

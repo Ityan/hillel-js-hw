@@ -1,13 +1,13 @@
 import ProtoTypes from "prop-types";
 
-function Button({ isOpened, onClick }) {
+function Button({ name, onClick }) {
   return (
-    <button onClick={onClick}>{isOpened ? "Hide title" : "Open title"}</button>
+    <button onClick={onClick}>{name}</button>
   );
 };
 
 Button.propTypes = {
-  isOpened: ProtoTypes.bool.isRequired,
+  name: ProtoTypes.string.isRequired,
   onClick: ProtoTypes.func.isRequired
 };
 
