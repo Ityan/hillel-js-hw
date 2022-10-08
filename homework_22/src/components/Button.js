@@ -1,14 +1,14 @@
 import ProtoTypes from "prop-types";
 
-function Button({ name, onClick }) {
+function Button({ onClick, children }) {
   return (
-    <button onClick={onClick}>{name}</button>
+    <button onClick={onClick}>{children}</button>
   );
 };
 
 Button.propTypes = {
-  name: ProtoTypes.string.isRequired,
-  onClick: ProtoTypes.func.isRequired
+  onClick: ProtoTypes.func.isRequired,
+  children: ProtoTypes.string.isRequired
 };
 
 export default Button;
