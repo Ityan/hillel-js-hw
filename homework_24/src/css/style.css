@@ -9,6 +9,11 @@
   margin: 5px auto 40px auto;
 }
 
+.form select {
+  width: 45%;
+  margin: 5px auto 40px auto;
+}
+
 .form label {
   margin: 0 auto;
 }

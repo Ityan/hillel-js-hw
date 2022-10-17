@@ -8,7 +8,7 @@ function App() {
     <section>
       <RegistrationForm />
       <hr />
-      {/* <ProfileForm /> */}
+      <ProfileForm />
     </section>
   );
 }
