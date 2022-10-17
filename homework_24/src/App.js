@@ -1,10 +1,14 @@
-import ImageList from "./components/ImagesList";
+import RegistrationForm from "./components/RegistrationForm";
+import ProfileForm from "./components/ProfileForm";
+
 import "./css/style.css"
 
 function App() {
   return (
     <section>
-      <ImageList />
+      <RegistrationForm />
+      <hr />
+      {/* <ProfileForm /> */}
     </section>
   );
 }
