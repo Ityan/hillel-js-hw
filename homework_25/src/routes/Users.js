@@ -34,7 +34,7 @@ const Users = () => {
               <td>Last Name</td>
               <td>Email</td>
               <td>Phone</td>
-              <td>Details</td>
+              <td></td>
             </tr>
           </thead>
           <tbody>
