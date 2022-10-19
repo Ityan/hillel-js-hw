@@ -1,0 +1,29 @@
+.err-container {
+  background: #3498DB;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.err-container h1 {
+  margin: 0;
+  font-size: 30vh;
+}
+
+.err-container h2 span {
+  padding: 0;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.err-container a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.err-container h3 a:hover {
+  text-decoration: none;
+  background: #fff;
+  color: #3498DB;
+  cursor: pointer;
+}

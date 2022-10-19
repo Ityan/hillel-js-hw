@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../fonts/NunitoSans-Regular.woff2') format('woff2'),
+    url('../fonts/NunitoSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0;
+}
+
+.logo {
+  width: 107px;
+  height: 30px;
+  background: url(../images/logo.png) no-repeat center top;
+  background-size: cover;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #7C8DB0;
+}
+
+.nav-link-active {
+  color: #605DEC;
+}
+
+.home {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.home-text {
+  display: inline-block;
+  margin: 0;
+  width: 560px;
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(5, 150, 207), rgb(146, 99, 221));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.users {
+  text-align: center;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.users-table thead tr {
+  background-color: #605DEC;
+  color: #ffffff;
+  text-align: left;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px 15px;
+}
+
+.users-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.users-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.users-table tbody tr:last-of-type {
+  border-bottom: 2px solid #605DEC;
+}
+
+.user-btn {
+  width: 115px;
+  height: 35px;
+  background: #605DEC;
+  border-radius: 4px;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FAFAFA;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-top: 30px;
+  text-decoration: none;
+  background: #605DEC;
+  border-radius: 4px;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FAFAFA;
+}
