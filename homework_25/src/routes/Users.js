@@ -9,7 +9,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
-  const handleClick = (userId) => {
+  const handleClick = (userId) => () => {
     navigate(`/users/${userId}`);
   };
 
@@ -44,7 +44,7 @@ const Users = () => {
                 <td>{user.lastName}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
-                <td><button onClick={() => handleClick(user.id)} className="user-btn">Show more</button></td>
+                <td><button onClick={handleClick(user.id)} className="user-btn">Show more</button></td>
               </tr>
             ))}
           </tbody>
