@@ -12,7 +12,7 @@ const StyledButtonBase = styled.button`
     url(${NunitoSansWoff}) format('woff');
     font-weight: 300;
     font-style: normal;
-  }
+  };
 
   padding-right: 20px;
   padding-left: 20px;
