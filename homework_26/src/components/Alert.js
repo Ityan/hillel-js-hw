@@ -1,18 +1,17 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import NunitoSansWoff from "../assets/fonts/NunitoSans-Regular.woff";
-import NunitoSansWoff2 from "../assets/fonts/NunitoSans-Regular.woff2";
-
 import { ReactComponent as CloseIcon } from "../assets/icons/closeIcon.svg";
 
 const getBackgroundColor = (color) => {
-  if (color === "warning") {
-    return "#FFD12F;";
-  } else if (color === "error") {
-    return "#EB5757";
-  }
-  return "#605DEC";
+  switch (color) {
+    case "warning":
+      return "#FFD12F;";
+    case "error":
+      return "#EB5757;";
+    default:
+      return "#605DEC";
+  };
 };
 
 const Wrapper = styled.div`
@@ -30,15 +29,6 @@ const StyledAlert = styled.div`
 `;
 
 const Text = styled.p`
-  @font-face {
-    font-family: 'Nunito Sans';
-    src: local('Nunito Sans'), local('NunitoSans'),
-    url(${NunitoSansWoff2}) format('woff2'),
-    url(${NunitoSansWoff}) format('woff');
-    font-weight: 300;
-    font-style: normal;
-  };
-
   width: 100%;
   font-family: 'Nunito Sans';
   font-style: normal;

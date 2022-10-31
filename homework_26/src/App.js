@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import GlobalFonts from './fonts/fonts';
 import Button from "./components/Button";
 import AlertPopUp from "./components/AlertPopUp";
 
@@ -18,6 +19,7 @@ const VerticalWrapper = styled(HorizontalWrapper)`
 function App() {
   return (
     <>
+      <GlobalFonts />
       <HorizontalWrapper>
         <Button color="primary">Primary button</Button>
         <Button color="primary" size="large">Primary large button</Button>
