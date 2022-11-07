@@ -4,7 +4,7 @@ import "@fontsource/nunito-sans/400.css";
 import "@fontsource/nunito-sans/600.css";
 import "@fontsource/nunito-sans/700.css";
 
-const formTheme = createTheme({
+const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: 'Nunito Sans',
@@ -51,4 +51,4 @@ const formTheme = createTheme({
   }
 });
 
-export default formTheme;
+export default theme;

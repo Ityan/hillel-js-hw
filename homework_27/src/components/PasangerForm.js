@@ -26,31 +26,31 @@ function PasangerForm() {
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Grid container spacing={1}>
           <Grid item xs={4}>
-            <FormField control={control} label="First Name" required />
+            <FormField control={control} label="First Name" name="firstName" required />
           </Grid>
           <Grid item xs={4}>
-            <FormField control={control} label="Middle" />
+            <FormField control={control} label="Middle" name="middleName" />
           </Grid>
           <Grid item xs={4}>
-            <FormField control={control} label="Last Name" required />
+            <FormField control={control} label="Last Name" name="lastName" required />
           </Grid>
           <Grid item xs={4}>
-            <FormField control={control} label="Suffix" />
+            <FormField control={control} label="Suffix" name="suffixName" />
           </Grid>
           <Grid item xs={6}>
-            <FormField control={control} label="Date of Birth" size="medium" helper="MM/DD/YY" type="date" required />
+            <FormField control={control} label="Date of Birth" size="medium" helper="MM/DD/YY" type="date" name="dob" required />
           </Grid>
           <Grid item xs={6}>
-            <FormField control={control} label="Email address" size="medium" required />
+            <FormField control={control} label="Email address" size="medium" name="email" required />
           </Grid>
           <Grid item xs={6}>
-            <FormField control={control} label="Phone number" size="medium" type="tel" required />
+            <FormField control={control} label="Phone number" size="medium" type="tel" name="phone" required />
           </Grid>
           <Grid item xs={6}>
-            <FormField control={control} label="Redress number" size="medium" />
+            <FormField control={control} label="Redress number" size="medium" name="redressNumber" />
           </Grid>
           <Grid item xs={6}>
-            <FormField control={control} label="Known traveller number" size="medium" required />
+            <FormField control={control} label="Known traveller number" size="medium" name="trevellerNumber" required />
           </Grid>
         </Grid>
         <Button type="submit" variant="contained" size="large">Submit</Button>

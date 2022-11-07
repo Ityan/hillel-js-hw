@@ -1,11 +1,11 @@
 import { ThemeProvider } from "@mui/material/styles";
 
 import PasangerForm from "./components/PasangerForm";
-import formTheme from "./themes/formTheme";
+import theme from "./themes/theme";
 
 function App() {
   return (
-    <ThemeProvider theme={formTheme}>
+    <ThemeProvider theme={theme}>
       <PasangerForm />
     </ThemeProvider>
   );
