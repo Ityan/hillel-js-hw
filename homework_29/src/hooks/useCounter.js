@@ -7,7 +7,7 @@ const useCounter = (initialValue = 1) => {
 
   const decrement = () => setCount((prevState) => prevState - 1);
 
-  const decrementable = () => count <= initialValue;
+  const reset = () => setCount(initialValue);
 
   return {
     initialValue,
@@ -15,7 +15,7 @@ const useCounter = (initialValue = 1) => {
     increment,
     decrement,
     setCount,
-    decrementable
+    reset
   };
 };
 
