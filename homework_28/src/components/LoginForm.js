@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 
 import Dialog from '@mui/material/Dialog';
@@ -11,21 +12,19 @@ import Grid from '@mui/material/Grid';
 import FormField from "./FormField";
 
 import AuthContext from "../contexts/auth/AuthContext";
-import LoginFormContext from "../contexts/form/LoginFormContext";
 
-const LoginForm = () => {
+const LoginForm = ({ isOpen, hideLoginForm }) => {
   const { loginUser } = useContext(AuthContext);
-  const { showLoginForm, closeLoginForm } = useContext(LoginFormContext);
 
   const { handleSubmit, control } = useForm();
 
   const handleClick = (creds) => {
     loginUser(creds);
-    closeLoginForm();
+    hideLoginForm();
   }
 
   return (
-    <Dialog onClose={closeLoginForm} open={showLoginForm}>
+    <Dialog onClose={hideLoginForm} open={isOpen}>
       <form onSubmit={handleSubmit(handleClick)} noValidate>
         <Grid container spacing={0} rowSpacing={5}>
           <Grid item xs={11}>
@@ -34,7 +33,7 @@ const LoginForm = () => {
             </DialogTitle>
           </Grid>
           <Grid item xs={1}>
-            <IconButton onClick={closeLoginForm}>
+            <IconButton onClick={hideLoginForm}>
               <Close />
             </IconButton>
           </Grid>
@@ -51,6 +50,11 @@ const LoginForm = () => {
       </form>
     </Dialog>
   )
+};
+
+LoginForm.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  hideLoginForm: PropTypes.func.isRequired,
 };
 
 export default LoginForm;

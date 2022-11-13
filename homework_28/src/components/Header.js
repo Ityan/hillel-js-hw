@@ -1,6 +1,6 @@
 import { useContext } from "react";
+import PropTypes from "prop-types";
 
-import LoginFormContext from "../contexts/form/LoginFormContext";
 import AuthContext from "../contexts/auth/AuthContext";
 
 import Link from '@mui/material/Link';
@@ -10,9 +10,8 @@ import Avatar from '@mui/material/Avatar';
 
 import LogoButton from "./LogoButton";
 
-const Header = () => {
+const Header = ({ showLoginForm }) => {
   const { isLoggedIn, userInfo, logoutUser } = useContext(AuthContext);
-  const { openLoginForm } = useContext(LoginFormContext);
 
   return (
     <>
@@ -31,7 +30,7 @@ const Header = () => {
         </Grid>
         {!isLoggedIn &&
           <Grid item xs={1}>
-            <Button variant="contained" size="medium" onClick={openLoginForm}>Log in</Button>
+            <Button variant="contained" size="medium" onClick={showLoginForm}>Log in</Button>
           </Grid>
         }
         {isLoggedIn &&
@@ -49,6 +48,10 @@ const Header = () => {
       </Grid>
     </>
   )
+};
+
+Header.propTypes = {
+  showLoginForm: PropTypes.func.isRequired
 };
 
 export default Header;

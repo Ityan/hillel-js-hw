@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import AuthContext from "./AuthContext";
 
-import { login } from "../../api/api";
+import { login } from "../../api";
 
 const userFromStorage = localStorage.getItem("userInfo");
 
