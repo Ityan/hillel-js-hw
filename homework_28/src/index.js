@@ -1,19 +1,44 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "./App";
+import { ThemeProvider } from "@mui/material/styles";
+
 import AuthProvider from "./contexts/auth/AuthProvider";
-import LoginFormProvider from "./contexts/form/LoginFormProvider";
 
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
+import Root from "./routes/Root";
+import Home from "./routes/Home";
+import FLights from "./routes/FLights";
+import Hotels from "./routes/Hotels";
+import NotFound from "./routes/NotFound";
+import theme from "./themes/theme";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: "",
+        element: <Home />
+      },
+      {
+        path: "/flights",
+        element: <FLights />
+      },
+      {
+        path: "/hotels",
+        element: <Hotels />
+      }
+    ]
+  }
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <StrictMode>
-    <LoginFormProvider>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </LoginFormProvider>
-  </StrictMode>
+  <AuthProvider>
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </AuthProvider>
 );

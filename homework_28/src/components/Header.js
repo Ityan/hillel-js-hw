@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import PropTypes from "prop-types";
+import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import AuthContext from "../contexts/auth/AuthContext";
 
@@ -9,24 +9,37 @@ import Grid from '@mui/material/Grid';
 import Avatar from '@mui/material/Avatar';
 
 import LogoButton from "./LogoButton";
+import LoginForm from "./LoginForm";
 
-const Header = ({ showLoginForm }) => {
+const Header = () => {
+  const [isOpen, setOpen] = useState(false);
+  const showLoginForm = () => setOpen(true);
+  const hideLoginForm = () => setOpen(false);
+
   const { isLoggedIn, userInfo, logoutUser } = useContext(AuthContext);
 
   return (
     <>
       <Grid container spacing={0}>
         <Grid item xs={isLoggedIn ? 7 : 8}>
-          <LogoButton />
+          <NavLink to="/">
+            <LogoButton />
+          </NavLink>
         </Grid>
         <Grid item xs={1}>
-          <Link href='#'>Flights</Link>
+          <NavLink to="/flights">
+            <Link>Flights</Link>
+          </NavLink>
         </Grid>
         <Grid item xs={1}>
-          <Link href='#'>Hotels</Link>
+          <NavLink to="/hotels">
+            <Link>Hotels</Link>
+          </NavLink>
         </Grid>
         <Grid item xs={1}>
-          <Link href='#'>Packages</Link>
+          <NavLink to="/packages">
+            <Link>Packages</Link>
+          </NavLink>
         </Grid>
         {!isLoggedIn &&
           <Grid item xs={1}>
@@ -45,13 +58,10 @@ const Header = ({ showLoginForm }) => {
             </Grid>
           </>
         }
+        <LoginForm isOpen={isOpen} hideLoginForm={hideLoginForm} />
       </Grid>
     </>
   )
-};
-
-Header.propTypes = {
-  showLoginForm: PropTypes.func.isRequired
 };
 
 export default Header;
