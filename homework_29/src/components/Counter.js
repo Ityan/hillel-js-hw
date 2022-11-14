@@ -16,12 +16,12 @@ const Counter = () => {
     }
   }
 
-  const decrementable = () => count <= initialValue;
+  const isDisabled = count <= initialValue;
 
   return (
     <>
       <IconButton
-        disabled={decrementable()}
+        disabled={isDisabled}
         icon={<MinusIcon />}
         onClick={decrement}
       />
